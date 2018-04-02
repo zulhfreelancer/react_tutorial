@@ -44,6 +44,7 @@ class App extends Component {
         <MyComponent
           title = "This is the component title"
           name = "Zulh"
+          onClick = {this.onClick}
         />
       </div>
     );
