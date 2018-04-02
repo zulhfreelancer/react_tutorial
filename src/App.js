@@ -10,11 +10,17 @@ class App extends Component {
     this.state = {
       title: 'Initial title',
       name: 'Initial name',
-      nameInput: 'Initial input value'
+      nameInput: 'Initial input value',
+      shouldRenderTitle: true
     };
 
     this.onClick = this.onClick.bind(this);
     this.updateNameInput = this.updateNameInput.bind(this);
+  }
+
+  renderTitle() {
+    if (!this.state.shouldRenderTitle) { return null; } // render nothing
+    return <h3>Hello world!</h3>;
   }
 
   onClick() {
@@ -48,6 +54,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        {this.renderTitle()}
         <h1>{title}</h1>
         <h2>{this.state.title}</h2>
         <div onClick={this.onClick}>Click here</div><br/>
