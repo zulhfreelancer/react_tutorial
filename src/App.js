@@ -43,7 +43,6 @@ class App extends Component {
         <div onClick={this.onClick}>Click here</div>
         <MyComponent
           title = "This is the component title"
-          name = "Zulh"
           onClick = {this.onClick}
         />
       </div>
