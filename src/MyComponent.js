@@ -12,6 +12,22 @@ const defaultProps = {
 };
 
 class MyComponent extends Component {
+  componentWillMount() {
+    console.log("Will mount");
+  }
+
+  componentDidMount() {
+    console.log("Did mount");
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    console.log(this.props, this.state, nextProps, nextState);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(this.props, this.state, prevProps, prevState);
+  }
+
   render() {
     var {title, name, onClick} = this.props;
 
