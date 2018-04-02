@@ -28,6 +28,11 @@ class MyComponent extends Component {
     console.log(this.props, this.state, prevProps, prevState);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    // return false; // disable component from being updated
+    return true; // enable component to be updated
+  }
+
   render() {
     var {title, name, onClick} = this.props;
 
