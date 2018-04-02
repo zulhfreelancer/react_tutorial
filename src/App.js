@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+import MyComponent from './MyComponent';
 import './App.css';
+// import logo from './logo.svg';
 
 class App extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class App extends Component {
         <h1>{title}</h1>
         <h2>{this.state.title}</h2>
         <div onClick={this.onClick}>Click here</div>
+        <MyComponent/>
       </div>
     );
   }
