@@ -9,16 +9,24 @@ class App extends Component {
 
     this.state = {
       title: 'Initial title',
-      name: 'Initial name'
+      name: 'Initial name',
+      nameInput: 'Initial input value'
     };
 
     this.onClick = this.onClick.bind(this);
+    this.updateNameInput = this.updateNameInput.bind(this);
   }
 
   onClick() {
     this.setState({
       title: "New app title",
       name: "New app name"
+    })
+  }
+
+  updateNameInput(event) {
+    this.setState({
+      nameInput: event.target.value
     })
   }
 
@@ -42,7 +50,15 @@ class App extends Component {
       <div className="App">
         <h1>{title}</h1>
         <h2>{this.state.title}</h2>
-        <div onClick={this.onClick}>Click here</div>
+        <div onClick={this.onClick}>Click here</div><br/>
+
+        <label>Test input</label><br/>
+        <input
+          type="text"
+          onChange={this.updateNameInput}
+          value={this.state.nameInput}
+        />
+
         <MyComponent
           title   = {this.state.title}
           name    = {this.state.name}
